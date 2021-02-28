@@ -1,0 +1,25 @@
+<!-- Main page that shows all categories for the products we sell. -->
+<div class="d-flex align-items-center justify-content-center">
+<h1>Categories (<%= @categories.length %>)</h1>
+</div>
+
+<div class="d-flex align-items-center justify-content-center">
+<ol>
+  <% @categories.each do |category| %>
+    <li>
+      <%= link_to category_products_path(category) do %>
+        <%= category.title %>
+        (<%= category.products_count %> products)
+      <% end %>
+    </li>
+  <% end %>
+</ol>
+</div>
+
+
+<div class="d-flex align-items-center justify-content-center">
+  <h1>Restrictions</h1>
+</div>
+<ul>
+  <%= STATES %>
+</ul>
